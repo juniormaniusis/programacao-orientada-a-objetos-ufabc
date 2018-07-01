@@ -7,26 +7,29 @@ public class NumeroRacional{
   //por exemplo: 8/2 deve ser guardado como 4/1, 8/4 como 1/2.
 
   //CONTRUTORES
-  public NumeroRacional(int numerador, int denominador){
+  public NumeroRacional(int numerador, int denominador) {
     this.numerador = numerador;
     this.denominador = denominador;
     this.simplificar();
   }
-  public NumeroRacional(){
+  public NumeroRacional() {
     NumeroAleatorio numero = new NumeroAleatorio();
     this.numerador = numero.getNumeroAleatorio();
-    this.denominador = numero.getNumeroAleatorio();
+    do{
+      this.denominador = numero.getNumeroAleatorio();
+    }while(this.denominador == 0);
+
     this.simplificar();
   }
 
-  private void simplificar(){
+  private void simplificar() {
     //transforma a fração em sua forma simplificada para ser armazenada adequadamente.
     int mdc = this.getMDC();
     this.numerador = this.numerador / mdc;
     this.denominador = this.denominador / mdc;
     return;
   }
-  private int getMDC(){
+  private int getMDC() {
     //como achar o maximo divisor comum?
     int mdc = 1;
     int i = 1;
@@ -40,13 +43,13 @@ public class NumeroRacional{
     }
     return mdc;
   }
-  public int getNumerador(){
+  public int getNumerador() {
     return this.numerador;
   }
-  public int getDenominador(){
+  public int getDenominador() {
     return this.denominador;
   }
-  public void somar(NumeroRacional parcela){
+  public void somar(NumeroRacional parcela) {
     //soma o numero racional com outro.
     int denominadorSoma = parcela.getDenominador() * this.getDenominador();
     int numeradorSoma =  this.getDenominador() * parcela.getNumerador()
@@ -55,7 +58,7 @@ public class NumeroRacional{
     this.numerador = numeradorSoma;
     this.simplificar();
   }
-  public String getString(){
+  public String getString() {
     return this.numerador + "/" + this.denominador;
   }
 
