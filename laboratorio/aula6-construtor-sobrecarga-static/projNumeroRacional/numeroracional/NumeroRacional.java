@@ -3,8 +3,8 @@ package numeroracional;
 public class NumeroRacional{
   private int numerador;
   private int denominador;
-  //os números devem ser armazenados em sua formula simplificada
-  //por exemplo: 8/2 deve ser quardado como 4/1, 8/4 como 1/2.
+  //os números devem ser armazenados em sua forma simplificada
+  //por exemplo: 8/2 deve ser guardado como 4/1, 8/4 como 1/2.
 
   //CONTRUTORES
   public NumeroRacional(int numerador, int denominador){
@@ -20,6 +20,7 @@ public class NumeroRacional{
   }
 
   private void simplificar(){
+    //transforma a fração em sua forma simplificada para ser armazenada adequadamente.
     int mdc = this.getMDC();
     this.numerador = this.numerador / mdc;
     this.denominador = this.denominador / mdc;
@@ -46,6 +47,7 @@ public class NumeroRacional{
     return this.denominador;
   }
   public void somar(NumeroRacional parcela){
+    //soma o numero racional com outro.
     int denominadorSoma = parcela.getDenominador() * this.getDenominador();
     int numeradorSoma =  this.getDenominador() * parcela.getNumerador()
                                             +  parcela.getDenominador() * this.getNumerador();
