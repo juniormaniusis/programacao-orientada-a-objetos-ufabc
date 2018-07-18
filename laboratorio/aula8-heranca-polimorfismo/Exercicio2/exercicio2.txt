@@ -1,0 +1,4 @@
+O objetivo era encontrar os erros do programa e corrigi-lo.
+a versão "errada" representa o código com os erros
+a versão "revolvida" representa o código com os erros corrigidos.
+
