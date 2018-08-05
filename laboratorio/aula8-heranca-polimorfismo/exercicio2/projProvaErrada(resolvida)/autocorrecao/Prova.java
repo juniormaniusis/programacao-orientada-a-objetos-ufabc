@@ -18,6 +18,7 @@ public class Prova {
 	public void imprimirProva() {
 		System.out.println("--- PROVA ---");
 		for (Pergunta elemento : perguntasDaProva)
-			elemento.imprimirPergunta();
+			if (elemento != null)
+				elemento.imprimirPergunta();
 	}
 }

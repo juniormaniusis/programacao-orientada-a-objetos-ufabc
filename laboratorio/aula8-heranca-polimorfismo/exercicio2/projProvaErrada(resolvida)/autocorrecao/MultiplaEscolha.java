@@ -27,7 +27,7 @@ public class MultiplaEscolha extends Pergunta {
 				conseguiuAdicionar = true;
 			}
 			
-		if (conseguiuAdicionar)
+		if (!conseguiuAdicionar)
 			throw new Exception("Nao adicionou alternativa.");
 	}
 	

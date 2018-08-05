@@ -11,7 +11,11 @@ public class Jogador {
   }
 
   public void  imprimirPosicao() {
-    System.out.println(this.posicao +"   "+ this.numeroCamisa);
+    System.out.println(this.posicao +"\t["+ this.numeroCamisa+"]");
+  }
+
+  public int getCamisa() {
+    return this.numeroCamisa;
   }
 
 }
