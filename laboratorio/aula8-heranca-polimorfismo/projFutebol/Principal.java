@@ -23,6 +23,8 @@ public class Principal {
     System.out.println("_____TIME DEF_____");
     DEF.imprimir();
 
+    //deveria ser criado algum método para isso, porém, estamos apenas realizando
+    //alguns testes rápidos, então considero aceitável
     System.out.println("_____SUBSTITUIÇÃO_____");
     System.out.println("Digite o número de um jogador do time ABC: ");
     int subs = (new Scanner(System.in)).nextInt();
@@ -36,7 +38,7 @@ public class Principal {
     System.out.println("(GO) Goleiro");
     String posicao = (new Scanner(System.in)).next();
 
-    Jogador novoJogador;
+    Jogador novoJogador = null;
 
     switch(posicao) {
         case "LD":
@@ -53,5 +55,22 @@ public class Principal {
         break;
     }
     ABC.substituicao(novoJogador, subs);
+    System.out.println("_____NOVA ESCALAÇÂO_____");
+
+    System.out.println("_____TIME ABC_____");
+    ABC.imprimir();
+
+    /*
+    TimeDeFutebol time = new TimeDeFutebol(11);
+    for (int i = 0; i < 11; i++){
+      time.adicionaJogador("AT", i+1);
+    }
+    time.adicionaJogador("GO", -1);
+    time.imprimir();
+    System.out.println(time.verificaTime());
+    */
   }
+
+
+
 }

@@ -47,6 +47,7 @@ public class TimeDeFutebol {
         }
         //NÃO ENCONTROU, LANCAR EXCEPTION?
     }
+
     public void substituicao(Jogador novoJogador, int numCamisaJogadorAtual) {
       for (int i = 0; i < numeroDeJogadores; i++) {
           if (time[i].getCamisa() == numCamisaJogadorAtual) {
@@ -54,7 +55,9 @@ public class TimeDeFutebol {
             ordenaTime();
             return;
           }
+        }
     }
+
     public void imprimir() {
         for (Jogador j : time) {
             if (j != null) {
@@ -101,4 +104,25 @@ public class TimeDeFutebol {
             adicionaJogador(posicao, numCamisa);
         }
     }
+
+    //deve retornar verdadeiro se há 11 jogadores, onde apenas 1 é goleiro
+    public boolean verificaTime() {
+
+      if (numeroDeJogadores < 11) {
+        return false;
+      }
+
+      int qtdGoleiros = 0;
+
+      for (Jogador j : time) {
+        if (j instanceof Goleiro) {
+          if (++qtdGoleiros > 1) {
+            return false;
+          }
+        }
+      }
+
+      return true;
+    }
+
 }
