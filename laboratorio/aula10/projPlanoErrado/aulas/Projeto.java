@@ -2,8 +2,8 @@ package aulas;
 
 public class Projeto extends Avaliacao {
 
-	@Override
-	public String gettTipo() {
+	
+	public String getTipo() {
 		return "Projeto";
 	}
 

@@ -1,7 +1,7 @@
 package aulas;
 
-private interface PlanoFacil {
+public interface PlanoFacil {
 
 	void cancelarProvas();
-	
+
 }
